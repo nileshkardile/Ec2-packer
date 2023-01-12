@@ -3,7 +3,7 @@ name: Create Golden AMI and Push to AWS
 on:
   workflow_dispatch:
     inputs:
-      AmiID:
+      amiId:
         description: 'The Amazon Base Image from which Golden AMI should create (Ex ami-03f8756d29f0b5f21 AMIs are region specific)'
         required: true
       regionName:

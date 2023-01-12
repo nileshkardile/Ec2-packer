@@ -10,7 +10,7 @@ on:
         description: 'The AWS Region Name in which Golden AMI should create (Ex us-west-2)'
         required: true
       description:
-        description: 'The description of the building pipeline (will be sent to slack channels)'
+        description: 'The description of building Golden AMI pipeline (will be sent to slack channels)'
         default: ''
         required: false
 

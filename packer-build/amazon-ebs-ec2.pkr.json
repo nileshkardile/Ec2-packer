@@ -20,7 +20,7 @@
           },
           "owners": ["018471812555"],
           "most_recent": true
-        }  
+        }, 
         "instance_type": "t2.micro",
         "ssh_username": "ubuntu",
         "ami_name": "packer-builder-goldenami-{{timestamp}}"

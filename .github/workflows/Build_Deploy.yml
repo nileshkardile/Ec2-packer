@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       AmiID:
-        description: 'The Amazon Base Image from which Golden AMI should create (Ex ami-03f8756d29f0b5f21)'
+        description: 'The Amazon Base Image from which Golden AMI should create (Ex ami-03f8756d29f0b5f21 AMIs are region specific)'
         required: true
       regionName:
         description: 'The AWS Region Name in which Golden AMI should create (Ex us-west-2)'

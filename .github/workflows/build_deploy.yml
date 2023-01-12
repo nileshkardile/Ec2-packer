@@ -30,9 +30,9 @@ jobs:
           aws-region: ${{ github.event.inputs.regionName }}
 
       - name: Packer Init
-        run: packer init .
+        run: packer init ./packer-build/packer-version.pkr.hcl
 
       - name: Packer Build
         run: |
-          packer validate amazon-ebs-ec2.json
-          packer build amazon-ebs-ec2.json
+          packer validate ./packer-build/amazon-ebs-ec2.json
+          packer build ./packer-build/amazon-ebs-ec2.json

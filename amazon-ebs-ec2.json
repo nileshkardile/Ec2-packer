@@ -12,13 +12,13 @@
         "source_ami": "ami-03f8756d29f0b5f21",
         "instance_type": "t2.micro",
         "ssh_username": "ubuntu",
-        "ami_name": "packer-example-{{timestamp}}"
+        "ami_name": "packer-builder-goldenami-{{timestamp}}"
       }
     ],
     "provisioners": [
       {
         "type": "shell",
-        "script": "provision.sh"
+        "script": "provision-script.sh"
       }
     ]
   }

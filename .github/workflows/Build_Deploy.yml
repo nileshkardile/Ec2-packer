@@ -1,11 +1,7 @@
-name: Run packer build on AWS using hashicorp
+name: Create Golden AMI and Push to AWS
 
 on:
   workflow_dispatch:
-  pull_request:
-  push:
-    branches:
-        - 'master'
 
 jobs:
   build-image:

@@ -2,6 +2,17 @@ name: Create Golden AMI and Push to AWS
 
 on:
   workflow_dispatch:
+    inputs:
+      AmiID:
+        description: 'The Amazon Base Image from which Golden AMI should create (Ex ami-03f8756d29f0b5f21)'
+        required: true
+      regionName:
+        description: 'The AWS Region Name in which Golden AMI should create (Ex us-west-2)'
+        required: true
+      description:
+        description: 'The description of the building pipeline (will be sent to slack channels)'
+        default: ''
+        required: false
 
 jobs:
   build-image:
@@ -16,7 +27,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
+          aws-region: ${{ github.event.inputs.regionName }}
 
       - name: Packer Init
         run: packer init .

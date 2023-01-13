@@ -1,24 +1,3 @@
-
-variable "aws_access_key" {
-  type    = string
-  default = ""
-}
-
-variable "aws_ami_id" {
-  type    = string
-  default = ""
-}
-
-variable "aws_region" {
-  type    = string
-  default = ""
-}
-
-variable "aws_secret_key" {
-  type    = string
-  default = ""
-}
-
 data "amazon-ami" "ami_filter" {
   access_key = "${var.aws_access_key}"
   secret_key  = "${var.aws_secret_key}"
@@ -38,15 +17,7 @@ source "amazon-ebs" "ebs_backed" {
   instance_type = "t2.micro"
   region        = "${var.aws_region}"
   secret_key    = "${var.aws_secret_key}"
-  source_ami    = "${data.amazon-ami.ami_filter.id}"
+  source_ami    = "${var.aws_ami_id}"
   ssh_username  = "ubuntu"
 }
 
-build {
-  sources = ["source.amazon-ebs.ebs_backed"]
-
-  provisioner "shell" {
-    script = "./packer-build/provision-script.sh"
-  }
-
-}

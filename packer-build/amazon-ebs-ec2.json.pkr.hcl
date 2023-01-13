@@ -22,7 +22,7 @@ variable "aws_secret_key" {
 data "amazon-ami" "ami_filter" {
   access_key = "${var.aws_access_key}"
   filters = {
-    name                = "${aws_ami_id}"
+    name                = "${var.aws_ami_id}"
     root-device-type    = "ebs"
     virtualization-type = "hvm"
   }

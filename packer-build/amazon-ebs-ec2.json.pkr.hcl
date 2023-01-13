@@ -26,7 +26,7 @@ data "amazon-ami" "ami_filter" {
     name                = "${var.aws_ami_id}"
   }
   most_recent = false
-  owners      = ["*"]
+  owners      = ["018471812555"]
   region      = "${var.aws_region}"
 }
 

@@ -21,15 +21,13 @@ variable "aws_secret_key" {
 
 data "amazon-ami" "ami_filter" {
   access_key = "${var.aws_access_key}"
+  secret_key  = "${var.aws_secret_key}"
   filters = {
     name                = "${var.aws_ami_id}"
-    root-device-type    = "ebs"
-    virtualization-type = "hvm"
   }
   most_recent = false
-  owners      = ["amazon, aws-marketplace"]
+  owners      = ["*"]
   region      = "${var.aws_region}"
-  secret_key  = "${var.aws_secret_key}"
 }
 
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }

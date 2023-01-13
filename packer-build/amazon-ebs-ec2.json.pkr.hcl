@@ -35,7 +35,6 @@ data "amazon-ami" "ami_filter" {
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 source "amazon-ebs" "ebs_backed" {
-  name          = "Golden-Ami"
   access_key    = "${var.aws_access_key}"
   ami_name      = "packer-builder-goldenami-${local.timestamp}"
   instance_type = "t2.micro"

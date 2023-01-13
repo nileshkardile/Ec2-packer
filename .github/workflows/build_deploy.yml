@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       amiId:
-        description: 'The Amazon Base Image from which Golden AMI should create (Ex ami-03f8756d29f0b5f21 AMIs are region specific)'
+        description: 'The source AMI ID (for example ami-03f8756d29f0b5f21, regional specific) used to build the AMI'
         required: true
       regionName:
-        description: 'The AWS Region Name in which Golden AMI should create (Ex us-west-2)'
+        description: 'The region (for example us-west-2) where Packer is building the AMI.'
         required: true
       description:
-        description: 'The description of building Golden AMI pipeline (will be sent to slack channels)'
+        description: 'The description of building the AMI pipeline (will be sent to slack channels)'
         default: ''
         required: false
 

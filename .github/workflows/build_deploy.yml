@@ -36,5 +36,5 @@ jobs:
 
       - name: Packer Build
         run: |
-          packer validate ./packer-build/amazon-ebs-ec2.json.pkr.hcl
-          packer build -var aws_ami_id=${{ github.event.inputs.amiId }} -var ssh_username=${{github.event.inputs.ssh_username}} -var aws_region=${{ github.event.inputs.regionName }} ./packer-build/amazon-ebs-ec2.json.pkr.hcl
+          packer validate ./packer-build/amazon-ebs-build.pkr.hcl
+          packer build -var aws_ami_id=${{ github.event.inputs.amiId }} -var ssh_username=${{github.event.inputs.ssh_username}} -var aws_region=${{ github.event.inputs.regionName }} ./packer-build/amazon-ebs-build.json.pkr.hcl
